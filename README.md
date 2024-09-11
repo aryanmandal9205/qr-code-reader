@@ -25,5 +25,5 @@ The QR Code Scanner is a web-based application that allows users to upload QR co
 ## Installation
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/qr-code-scanner.git
+   git clone https://github.com/aryanmandal9205/qr-code-scanner.git
    cd qr-code-scanner
