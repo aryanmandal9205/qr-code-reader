@@ -1,0 +1,230 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Reset default styles and set font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; /* Set font for the entire document */
+}
+
+/* Style for the body */
+body {
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Align items vertically */
+  justify-content: center; /* Align items horizontally */
+  min-height: 100vh; /* Full viewport height */
+  padding: 0 10px; /* Horizontal padding */
+  background: #121212; /* Dark background color */
+}
+
+/* Wrapper for the main content */
+.wrapper {
+  height: 270px; /* Initial height of the wrapper */
+  width: 420px; /* Fixed width */
+  border-radius: 15px; /* Rounded corners */
+  background: linear-gradient(135deg, #FFA726, #FF9800); /* Orange gradient for wrapper */
+  padding: 30px 30px 35px; /* Padding inside the wrapper */
+  transition: height 0.2s ease, transform 0.3s ease; /* Transition effects for height and scale */
+  box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.3), /* Neumorphism shadow effect */
+              -8px -8px 20px rgba(255, 255, 255, 0.1); /* Light shadow for contrast */
+  animation: fadeIn 0.5s; /* Animation for fade in effect */
+}
+
+/* Scale up the wrapper slightly on hover */
+.wrapper:hover {
+  transform: scale(1.02); /* Slight scaling effect on hover */
+}
+
+/* Expanded height for active state */
+.wrapper.active {
+  height: 525px; /* Increased height when active */
+}
+
+/* Style for the form inside the wrapper */
+.wrapper form {
+  height: 210px; /* Initial height of the form */
+  display: flex; /* Use flexbox for centering */
+  cursor: pointer; /* Change cursor to pointer */
+  user-select: none; /* Prevent text selection */
+  text-align: center; /* Center text */
+  border-radius: 15px; /* Rounded corners */
+  background: #222; /* Dark background for form */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  transition: height 0.2s ease, transform 0.3s ease; /* Transition effects for height and scale */
+  box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.4), /* Inner shadow for neumorphism effect */
+              inset -5px -5px 15px rgba(255, 255, 255, 0.1); /* Light inner shadow */
+  animation: slideIn 0.5s ease; /* Animation for slide in effect */
+}
+
+/* Active state for the form */
+.wrapper.active form {
+  height: 225px; /* Increased height for active form */
+  pointer-events: none; /* Disable pointer events when active */
+}
+
+/* Hide images initially */
+form img {
+  display: none; /* Initially hidden */
+  max-width: 148px; /* Maximum width for images */
+}
+
+/* Show image in active state */
+.wrapper.active form img {
+  display: block; /* Show image when active */
+}
+
+/* Hide content initially in active state */
+.wrapper.active form .content {
+  display: none; /* Initially hidden */
+}
+
+/* Style for icons in the form content */
+form .content i {
+  color: #FFA726; /* Orange color for icons */
+  animation: bounce 1s infinite; /* Bouncing animation for icons */
+}
+
+/* Style for paragraphs in the form content */
+form .content p {
+  color: #FFA726; /* Orange text color */
+  margin-top: 15px; /* Margin above the paragraph */
+  font-size: 16px; /* Font size */
+}
+
+/* Details section styles */
+.wrapper .details {
+  opacity: 0; /* Initially hidden */
+  margin-top: 25px; /* Margin above the details */
+  pointer-events: none; /* Disable pointer events */
+  transition: opacity 0.5s ease; /* Smooth transition for opacity */
+}
+
+/* Show details when wrapper is active */
+.wrapper.active .details {
+  opacity: 1; /* Fully visible */
+  pointer-events: auto; /* Enable pointer events */
+  transition: opacity 0.5s 0.05s ease; /* Delay in transition */
+}
+
+/* Textarea styles */
+.details textarea {
+  width: 100%; /* Full width */
+  height: 128px; /* Fixed height */
+  outline: none; /* Remove outline */
+  resize: none; /* Disable resizing */
+  color: #fff; /* White text color */
+  font-size: 18px; /* Font size */
+  background: #222; /* Dark background for textarea */
+  border-radius: 10px; /* Rounded corners */
+  padding: 10px 15px; /* Padding inside textarea */
+  border: 1px solid #FFA726; /* Orange border */
+  box-shadow: inset 3px 3px 8px rgba(0, 0, 0, 0.4), /* Inner shadow for neumorphism effect */
+              inset -3px -3px 8px rgba(255, 255, 255, 0.1); /* Light inner shadow */
+  transition: border-color 0.3s ease; /* Transition for border color */
+}
+
+/* Scrollbar styles for the textarea */
+textarea:hover {
+  border-color: #FF9800; /* Change border color on hover */
+}
+
+textarea::-webkit-scrollbar {
+  width: 0px; /* Hide scrollbar */
+}
+
+textarea:hover::-webkit-scrollbar {
+  width: 5px; /* Show scrollbar on hover */
+}
+
+textarea:hover::-webkit-scrollbar-track {
+  background: none; /* No background for scrollbar track */
+}
+
+textarea:hover::-webkit-scrollbar-thumb {
+  background: #FFA726; /* Orange scrollbar thumb */
+  border-radius: 8px; /* Rounded corners for scrollbar thumb */
+}
+
+/* Buttons section styles */
+.details .buttons {
+  display: flex; /* Use flexbox for layout */
+  margin-top: 20px; /* Margin above buttons */
+  align-items: center; /* Align items vertically */
+  justify-content: space-between; /* Space buttons evenly */
+}
+
+/* Button styles */
+.buttons button {
+  height: 55px; /* Fixed height */
+  outline: none; /* Remove outline */
+  border: none; /* Remove border */
+  font-weight: 500; /* Medium font weight */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Change cursor to pointer */
+  color: #FFA726; /* Orange text for buttons */
+  border-radius: 10px; /* Rounded corners */
+  background: #222; /* Dark background for buttons */
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* Transition effects */
+  width: calc(100% / 2 - 10px); /* Half width minus margin */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3), /* Neumorphism shadow */
+              -5px -5px 10px rgba(255, 255, 255, 0.1); /* Light shadow */
+}
+
+/* Change the background color and text color on hover */
+.buttons button:hover {
+  background-color: #FFA726; /* Change to orange on hover */
+  color: #fff; /* Change text color to white for better contrast */
+}
+
+/* Scale down effect on button active state */
+.buttons button:active {
+  transform: scale(0.95); /* Scale down when active */
+}
+
+/* Keyframe animations */
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start invisible */
+  }
+  to {
+    opacity: 1; /* End fully visible */
+  }
+}
+
+/* Slide in animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(-10px); /* Start slightly above */
+    opacity: 0; /* Start invisible */
+  }
+  to {
+    transform: translateY(0); /* End at normal position */
+    opacity: 1; /* End fully visible */
+  }
+}
+
+/* Bouncing animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0); /* No vertical movement */
+  }
+  50% {
+    transform: translateY(-10px); /* Move up slightly */
+  }
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 450px) {
+  .wrapper {
+    padding: 25px; /* Adjust padding */
+    height: 260px; /* Adjust height */
+  }
+  .wrapper.active {
+    height: 520px; /* Adjust active height */
+  }
+}
